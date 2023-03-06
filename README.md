@@ -1,3 +1,7 @@
+# Creado y desarrollado por: Javier Santana Rodríguez
+Grupo # 4. Oracle One - Alura Latam
+
+
 # Descripción
 ¡Bienvenido al primer desafío del Challenge Java!
 
@@ -14,7 +18,7 @@ Las características solicitadas por nuestro cliente son las siguientes:
        - Convertir de la moneda de tu país  a Yen Japonés
        - Convertir de la moneda de tu país  a Won sul-coreano
        
-Recordando que también debe ser posible convertir inversamente, es decir:
+- Recordando que también debe ser posible convertir inversamente, es decir:
 
        - Convertir de Dólar a la moneda de tu país
        - Convertir de Euros a la moneda de tu país
