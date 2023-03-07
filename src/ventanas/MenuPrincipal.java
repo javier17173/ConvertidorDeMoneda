@@ -16,7 +16,11 @@ import javax.swing.DefaultComboBoxModel;
 
 //Se crea el menú Principal
 public class MenuPrincipal extends javax.swing.JFrame {
-    private javax.swing.JButton jButtonAceptar;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private javax.swing.JButton jButtonAceptar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -24,11 +28,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private JComboBox<Object> comboBox = new JComboBox<Object>();
 	
 	public MenuPrincipal() {
+		
+	       
+	}
+	
+	public void initialize() {
 		initComponents();
 	    this.setLocation(450, 150);
 	    this.setTitle("Menú Principal");
 	    this.setVisible(true);
-	       
 	}
 	
 	public JButton getjButtonAceptar() {
@@ -57,6 +65,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 	        		if(opcion=="Conversor de Monedas") {
 	        			try {
 	        				VentanaConversorMoneda window = new VentanaConversorMoneda();
+	        				window.initialize();
 	        				window.agregarMonedas();
 	        				} catch (Exception e1) {
 	        					e1.printStackTrace();
@@ -64,8 +73,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 	        			dispose();
 	        		}else{
 	        			try {
-	        				VentanaConversorTemperatura windows = new VentanaConversorTemperatura();
-	        				windows.agregarTemperaturas();
+	        				VentanaConversorTemperatura window = new VentanaConversorTemperatura();
+	        				window.initialize();
+	        				window.agregarTemperaturas();
 	        				} catch (Exception e1) {
 	        					e1.printStackTrace();
 	        				}
@@ -89,6 +99,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 	        	@Override
 	        	public void mouseClicked(MouseEvent e) {
 	        		VentanaSalir salir = new VentanaSalir();
+	        		salir.initialize();
 	        		dispose();
 	        	}
 	        });

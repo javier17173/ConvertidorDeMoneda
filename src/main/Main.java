@@ -16,6 +16,7 @@ public class Main {
 			public void run() {
 				try {
 					MenuPrincipal menu = new MenuPrincipal();
+					menu.initialize();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

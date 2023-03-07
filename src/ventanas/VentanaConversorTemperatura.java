@@ -23,6 +23,10 @@ import temperatura.ConvertidorTemperatura;
 public class VentanaConversorTemperatura extends javax.swing.JFrame {
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private javax.swing.JButton jButtonCalcular;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBoxA;
@@ -44,45 +48,15 @@ public class VentanaConversorTemperatura extends javax.swing.JFrame {
 
     public VentanaConversorTemperatura() {
     	
+    }
+    
+    public void initialize() {
+
         initComponents();
         this.setLocation(450, 150);
         this.setTitle("Conversor Temperatura");
-        
-        menuOpciones = new JMenuBar();
-        setJMenuBar(menuOpciones);
-        
-        menuRegresarSalir = new JMenu("Opciones");
-        menuOpciones.add(menuRegresarSalir);
-        
-        JLabel lblNewRegresar = new JLabel("Regresar");
-        lblNewRegresar.addMouseListener(new MouseAdapter() {
-        	@Override
-        	public void mouseClicked(MouseEvent e) {
-        		EventQueue.invokeLater(new Runnable() {
-        			public void run() {
-        				try {
-        					MenuPrincipal menu = new MenuPrincipal();
-        				} catch (Exception e) {
-        					e.printStackTrace();
-        				}
-        			}
-        		});
-        		dispose();
-        	}
-        });
-        menuRegresarSalir.add(lblNewRegresar);
-        
-        JLabel lblNewSalir = new JLabel("Salir");
-        lblNewSalir.addMouseListener(new MouseAdapter() {
-        	@Override
-        	public void mouseClicked(MouseEvent e) {
-        		VentanaSalir salir = new VentanaSalir();
-        		dispose();
-        	}
-        });
-        menuRegresarSalir.add(lblNewSalir);
         this.setVisible(true);
-        
+     
     }
 
     public void setjComboBoxA(JComboBox<String> jComboBoxA) {
@@ -131,6 +105,43 @@ public class VentanaConversorTemperatura extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jComboBoxA = new javax.swing.JComboBox<String>();
+        
+        menuOpciones = new JMenuBar();
+        setJMenuBar(menuOpciones);
+        
+        menuRegresarSalir = new JMenu("Opciones");
+        menuOpciones.add(menuRegresarSalir);
+        
+        JLabel lblNewRegresar = new JLabel("Regresar");
+        lblNewRegresar.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		EventQueue.invokeLater(new Runnable() {
+        			public void run() {
+        				try {
+        					MenuPrincipal menu = new MenuPrincipal();
+        					menu.initialize();
+        				} catch (Exception e) {
+        					e.printStackTrace();
+        				}
+        			}
+        		});
+        		dispose();
+        	}
+        });
+        menuRegresarSalir.add(lblNewRegresar);
+        
+        JLabel lblNewSalir = new JLabel("Salir");
+        lblNewSalir.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		VentanaSalir salir = new VentanaSalir();
+        		salir.initialize();
+        		dispose();
+        	}
+        });
+        menuRegresarSalir.add(lblNewSalir);
+        
         jButtonCalcular = new javax.swing.JButton();
         jButtonCalcular.addMouseListener(new MouseAdapter() {
         	@Override
@@ -176,14 +187,11 @@ public class VentanaConversorTemperatura extends javax.swing.JFrame {
         jLabel4.setText("De");
 
         jButtonCalcular.setText("Calcular");
-        
 
         jLabel3.setText("Cambio");
 
-
         jLabel1.setText("Cantidad");
 
-        
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel6.setText("Conversor de Temperatura");
